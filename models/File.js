@@ -9,7 +9,7 @@ const fileSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  mimeType: {
+  fileType: {
     type: String,
     required: true,
   },

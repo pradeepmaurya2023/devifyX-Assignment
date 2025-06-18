@@ -10,10 +10,12 @@ app.use(express.json());
 
 // Importing Routes
 const userRoutes = require("./routes/userRoutes");
+const fileRoutes = require("./routes/fileRoutes");
 
 
 // Using Routes for
 app.use("/api/user", userRoutes);
+app.use("/api/files", fileRoutes);
 
 // for testing 
 app.get("/", (req, res) => {

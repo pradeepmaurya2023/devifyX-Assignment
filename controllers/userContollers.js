@@ -4,11 +4,7 @@ const jwt = require("jsonwebtoken");
 const JWT_SECRET = process.env.JWT_SECRET;
 
 const User = require("../models/User");
-
-// will send same strucuter response
-const sendResponse = (res, status, message, data = null) => {
-  res.status(status).json({ message, ...(data && { data }) });
-};
+const sendResponse = require('../utils/sendResponse');
 
 // User Signup Endpoint Controller
 async function userSignup(req, res) {
@@ -73,7 +69,7 @@ async function userSignIn(req, res) {
     }
 
     const token = jwt.sign({ id: user._id }, JWT_SECRET, {
-      expiresIn: "1h",
+      expiresIn: "10h",
     });
 
     return sendResponse(res, 200, "Sign in successful", { token });

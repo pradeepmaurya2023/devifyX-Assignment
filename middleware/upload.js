@@ -4,7 +4,7 @@ const multer = require("multer");
 const storage = multer.diskStorage({
   destination: function (req, res, cb) {
     // Location on server where files will get stored
-    cb(null, "uploads/");
+    cb(null, "uploads");
   },
   filename: function (req, file, cb) {
     // Uniquename for every file getting saved on the server
